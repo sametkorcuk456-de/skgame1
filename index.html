@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang='tr'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>SKgame1.org.tr</title>
+
+    <!-- CSS -->
+    <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+
+    <!-- =========================
+         ANA MENÜ
+    ========================== -->
+    <div id='menu' class='screen active'>
+
+        <h1>SKgame1</h1>
+
+        <button onclick='startGame()'>
+            Oyna
+        </button>
+
+        <button onclick='showControls()'>
+            Kontroller
+        </button>
+
+    </div>
+
+    <!-- =========================
+         KONTROLLER
+    ========================== -->
+    <div id='controls' class='screen'>
+
+        <h1>Kontroller</h1>
+
+        <p style='color:white;font-size:24px;text-align:center;max-width:700px'>
+
+            Kalenin içine fare ile tıkla.
+
+            <br><br>
+
+            Kaleci rastgele bir bölgeye atlar.
+
+            <br><br>
+
+            Tutarsa <b>-1</b> puan.
+
+            <br>
+
+            Tutamazsa <b>+1</b> puan.
+
+            <br><br>
+
+            Her şuttan sonra <b>3 saniye beklemelisin</b>.
+
+            <br><br>
+
+            Kazanmak için <b>10 puan</b>.
+
+            <br>
+
+            Kaybetmek için <b>-3 puan</b>.
+
+        </p>
+
+        <button onclick='showMenu()'>
+            Geri
+        </button>
+
+    </div>
+
+    <!-- =========================
+         OYUN
+    ========================== -->
+    <div id='game' class='screen'>
+
+        <!-- Puan -->
+        <div id='score'>
+            Puan: 0
+        </div>
+
+        <!-- Test Butonları -->
+        <div id='testButtons'>
+
+            <button onclick='addPoint()'>
+                +
+            </button>
+
+            <button onclick='removePoint()'>
+                -
+            </button>
+
+        </div>
+
+        <!-- Üst Mesaj -->
+        <div id='message'></div>
+
+        <!-- Kale -->
+        <div id='goal'>
+
+            <!-- Kaleci -->
+            <div id='goalkeeper'>
+                🧤
+            </div>
+
+            <!-- Top -->
+            <div id='ball'></div>
+
+        </div>
+
+        <!-- Futbolcu -->
+        <div id='player'>
+            ⚽ Futbolcu
+        </div>
+
+    </div>
+
+    <!-- =========================
+         BİTİŞ EKRANI
+    ========================== -->
+    <div id='overlay'>
+
+        <h2 id='overlayTitle'></h2>
+
+        <p id='overlayText'></p>
+
+        <div id='small'></div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src='game.js'></script>
+
+</body>
+</html>

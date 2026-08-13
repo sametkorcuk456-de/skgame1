@@ -1,0 +1,254 @@
+/* =========================
+   SKgame1 - style.css
+   ========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#4CAF50;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+
+/* ---------- Ekranlar ---------- */
+
+.screen{
+    display:none;
+    width:100%;
+    height:100%;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.active{
+    display:flex;
+}
+
+/* ---------- Başlık ---------- */
+
+h1{
+    color:white;
+    font-size:52px;
+    text-shadow:3px 3px 6px rgba(0,0,0,0.5);
+    margin-bottom:25px;
+}
+
+/* ---------- Butonlar ---------- */
+
+button{
+    padding:15px 35px;
+    margin:10px;
+    font-size:22px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    background:#222;
+    color:white;
+    transition:0.2s;
+}
+
+button:hover{
+    background:#444;
+    transform:scale(1.05);
+}
+
+/* ---------- Puan ---------- */
+
+#score{
+    position:absolute;
+    top:20px;
+    left:20px;
+    color:white;
+    font-size:30px;
+    font-weight:bold;
+    text-shadow:2px 2px 4px black;
+}
+
+/* ---------- Test Butonları ---------- */
+
+#testButtons{
+    position:absolute;
+    top:20px;
+    right:20px;
+}
+
+#testButtons button{
+    width:52px;
+    height:52px;
+    font-size:28px;
+    margin:4px;
+}
+
+/* ---------- Kale ---------- */
+
+#goal{
+    width:640px;
+    height:280px;
+    background:#ffffff;
+    border:10px solid #dddddd;
+    position:relative;
+    cursor:crosshair;
+    box-shadow:0 0 25px rgba(0,0,0,0.45);
+    overflow:hidden;
+}
+
+/* Kale çizgileri */
+
+#goal::before{
+    content:'';
+    position:absolute;
+    left:33%;
+    top:0;
+    width:3px;
+    height:100%;
+    background:#eeeeee;
+}
+
+#goal::after{
+    content:'';
+    position:absolute;
+    left:66%;
+    top:0;
+    width:3px;
+    height:100%;
+    background:#eeeeee;
+}
+
+/* ---------- Kaleci (2.5x büyük) ---------- */
+
+#goalkeeper{
+    position:absolute;
+    width:175px;
+    height:175px;
+    left:232px;
+    top:52px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:90px;
+    transition:0.25s ease;
+    user-select:none;
+}
+
+/* ---------- Top ---------- */
+
+#ball{
+    position:absolute;
+    width:24px;
+    height:24px;
+    background:black;
+    border-radius:50%;
+    left:308px;
+    top:245px;
+    transition:0.25s ease;
+}
+
+/* ---------- Futbolcu ---------- */
+
+#player{
+    margin-top:20px;
+    font-size:42px;
+    color:white;
+    font-weight:bold;
+    text-shadow:2px 2px 4px black;
+    transition:0.1s;
+    user-select:none;
+}
+
+/* ---------- Oyun Mesajı ---------- */
+
+#message{
+    position:absolute;
+    top:90px;
+    color:white;
+    font-size:34px;
+    font-weight:bold;
+    text-shadow:2px 2px 4px black;
+}
+
+/* ---------- Bitiş Ekranı ---------- */
+
+#overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.82);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:white;
+    text-align:center;
+    padding:20px;
+    z-index:999;
+}
+
+#overlay h2{
+    font-size:56px;
+    margin-bottom:15px;
+}
+
+#overlay p{
+    font-size:30px;
+}
+
+#small{
+    margin-top:16px;
+    font-size:18px;
+    color:#dddddd;
+}
+
+/* ---------- Beklemelisin Animasyonu ---------- */
+
+.shake{
+    color:red !important;
+    animation:shake 0.5s;
+}
+
+@keyframes shake{
+    0%{ transform:translateX(0); }
+    15%{ transform:translateX(-10px); }
+    30%{ transform:translateX(10px); }
+    45%{ transform:translateX(-10px); }
+    60%{ transform:translateX(10px); }
+    75%{ transform:translateX(-8px); }
+    90%{ transform:translateX(8px); }
+    100%{ transform:translateX(0); }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width:700px){
+
+    #goal{
+        width:95vw;
+        height:42vw;
+    }
+
+    #goalkeeper{
+        width:120px;
+        height:120px;
+        font-size:64px;
+    }
+
+    #player{
+        font-size:30px;
+    }
+
+    h1{
+        font-size:36px;
+    }
+
+    button{
+        font-size:18px;
+    }
+
+}
